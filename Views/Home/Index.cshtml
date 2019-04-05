@@ -1,0 +1,146 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1>@ViewData["Title"]</h1>
+</div>
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1" >
+
+
+<p><b>The .NET platform</b></p>
+
+<p class=MsoNormal>.NET is a developer platform made up of tools,
+programming languages, and libraries for building many different types of
+applications.</p>
+
+<p class=MsoNormal>The base platform provides components that
+apply to all different types of apps. Additional frameworks, such as ASP.NET,
+extend .NET with components for building specific types of apps.</p>
+
+<p class=MsoNormal>Here are some things included in the .NET
+platform:</p>
+
+<p class=MsoNormal>             •The C# programming language and
+its compilers</p>
+
+<p class=MsoNormal>             •Base libraries for working with
+strings, dates, files/IO, and more</p>
+
+<p class=MsoNormal>             •Editors and tools for Windows,
+Linux, macOS, and Docker</p>
+
+<p><b>ASP.NET extends .NET</b></p>
+
+<p class=MsoNormal>ASP.NET extends the .NET platform with tools
+and libraries specifically for building web apps.   </p>
+
+<p class=MsoNormal>These are some things that ASP.NET adds to the
+.NET platform:</p>
+
+<p class=MsoNormal>             •Base framework for processing
+web requests</p>
+
+<p class=MsoNormal>             •Web-page templating syntax,
+known as Razor, for building dynamic web pages using C#</p>
+
+<p class=MsoNormal>             •Libraries for common web
+patterns, such as Model View Controller (MVC)</p>
+
+<p class=MsoNormal>             •Authentication system that
+includes libraries, a database, and template pages for handling logins,
+including multi-factor authentication and external authentication with Google,
+Twitter, and more.</p>
+
+<p class=MsoNormal>             •Editor extensions to provide
+syntax highlighting, code completion, and other functionality specifically for
+developing web pages</p>
+
+<p><b>Backend code in C#</b></p>
+
+<p class=MsoNormal>             •When using ASP.NET your back end
+code, such as business logic and data access, is written using C#.</p>
+
+<p class=MsoNormal>             •Because ASP.NET extends .NET,
+you can use the large ecosystem of packages and libraries available to all .NET
+developers. You can also author your own libraries that are shared between any
+applications written on the .NET platform.</p>
+
+<p><b>Dynamic pages using C#, HTML, CSS, and
+JavaScript</b></p>
+
+<p class=MsoNormal>             •Razor provides a syntax for
+creating dynamic web pages using HTML and C#. Your C# code is evaluated on the
+server and the resulting HTML content is sent to the user.</p>
+
+<p class=MsoNormal>             •Code that executes client-side
+is written in JavaScript. ASP.NET integrates with JavaScript frameworks and
+includes pre-configured templates for single page app (SPA) frameworks like
+React and Angular.</p>
+
+<p><b>Windows, Linux, macOS, and Docker</b></p>
+
+<p class=MsoNormal>ASP.NET apps can be developed and run on
+Windows, Linux, macOS, and Docker.</p>
+
+<p class=MsoNormal>The Visual Studio family of products has tools
+for building .NET apps on any operating system. There are also command line
+tools and extensions for many popular editors.</p>
+
+<p class=MsoNormal><b>What is Docker?</b></p>
+<p class=MsoNormal>Docker is a tool designed to make it easier to create, deploy, and run applications by using containers. Containers allow a developer to package up an application with all of the parts it needs, such as libraries and other dependencies, and ship it all out as one package. By doing so, thanks to the container, the developer can rest assured that the application will run on any other Linux machine regardless of any customized settings that machine might have that could differ from the machine used for writing and testing the code.</p>
+<p class=MsoNormal>In a way, Docker is a bit like a virtual machine. But unlike a virtual machine, rather than creating a whole virtual operating system, Docker allows applications to use the same Linux kernel as the system that they're running on and only requires applications be shipped with things not already running on the host computer. This gives a significant performance boost and reduces the size of the application.</p>
+<p class=MsoNormal>And importantly, Docker is open source. This means that anyone can contribute to Docker and extend it to meet their own needs if they need additional features that aren't available out of the box.</p>
+
+
+
+
+<p><b>Steps to follow to use .net with docker</b></p>
+
+<p class=MsoNormal> Install .Net Core SDK                                                    </p>
+<p class=MsoNormal> <a>https://dotnet.microsoft.com/download                                    </a></p>
+<p class=MsoNormal> Install Docker                                                           </p>
+<p class=MsoNormal> <a>https://www.docker.com/products/docker-desktop                           </a></p>
+<p class=MsoNormal> Install text editor as Visual Studio Code                                </p>
+<p class=MsoNormal> https://code.visualstudio.com/                                           </a></p>
+<p class=MsoNormal> Way to use it:                                                         </p>
+<p class=MsoNormal> 	1- Create folder for the new project                                      </p>
+<p class=MsoNormal> 		In CMD:                                                                 </p>
+<p class=MsoNormal><code> 			CD C:\                                                              </code></p>
+<p class=MsoNormal><code> 			MD NewProyect                                                       </code></p>
+<p class=MsoNormal> 	2- Create MVC project                                                     </p>
+<p class=MsoNormal> 		In CMD:                                                                 </p>
+<p class=MsoNormal><code> 			CD C:\NewProyect                                                    </code></p>
+<p class=MsoNormal><code> 			dotnet new mvc                                                      </code></p>
+<p class=MsoNormal> 	3- Open the project with the text editor to edit it                       </p>
+<p class=MsoNormal> 	4- Publish project                                                        </p>
+<p class=MsoNormal> 		In CMD:	                                                                </p>
+<p class=MsoNormal><code> 			CD C:\NewProyect                                                    </code></p>
+<p class=MsoNormal><code> 			dotnet publish -o ./publish                                         </code></p>
+<p class=MsoNormal> 	5- Start service                                                          </p>
+<p class=MsoNormal> 		In CMD:	                                                                </p>
+<p class=MsoNormal><code> 			CD C:\NewProyect\publish                                            </code></p>
+<p class=MsoNormal><code> 			dotnet NewProyect.dll                                               </code></p>
+<p class=MsoNormal> 	6- Create Dockerfile in the project folder with:                           </p>
+<p class=MsoNormal><code> 		FROM dotnet/core-nightly/sdk:2.1                                        </code></p>
+<p class=MsoNormal><code> 		WORKDIR /app                                                            </code></p>
+<p class=MsoNormal><code> 		COPY ./publish .                                                        </code></p>
+<p class=MsoNormal><code> 		ENTRYPOINT ["dotnet","NewProyect.dll"]                                  </code></p>
+<p class=MsoNormal> 	7- Create image .net e and boot image in a port                           </p>
+<p class=MsoNormal> 		In CMD:	                                                                </p>
+<p class=MsoNormal><code> 			CD C:\NewProyect                                                    </code></p>
+<p class=MsoNormal><code> 			docker build -t myimagen .                                          </code></p>
+<p class=MsoNormal><code> 			docker run -p 5000:80 myimagen                                      </code></p>
+<p class=MsoNormal> 	8- You have access to the service through the URL: <a>https://localhost:5000/</a></p>
+
+
+
+
+
+</div>
+<div>
+<p><b>References:</b></p>
+<p> <a href="https://dotnet.microsoft.com/learn/web/what-is-aspnet">building Web apps with ASP.NET Core</a>.</p>
+<p> <a href="https://opensource.com/resources/what-docker">Docker</a>.</p>
+
+</div>

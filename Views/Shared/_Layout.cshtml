@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - aspmvc</title>
+
+    <environment include="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute"
+              crossorigin="anonymous"
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"/>
+    </environment>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+
+         <nav class="navbar navbar-light" style="background-color: #e3f2fd;">         
+         
+
+            <div class="container">
+                <h1 class="display-4">Welcome to .NET whit Docker</h1>
+                <div class="container">
+                <p class="lead">Shape Your Digital Future whit Docker and .NET.</p>
+                <hr class="my-4">
+                </div>
+                
+        
+            </div>
+            <div class="container page-scroll">
+                       <ul class="nav nav-pills nav-fill flex-sm-row flex-grow-1 justify-content-center">
+                      <li class="nav-item">
+                        <a class="flex-sm-fill text-sm-center nav-link " asp-controller="home" asp-action="index"  id="home-tab"   >Home</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="flex-sm-fill text-sm-center nav-link  " asp-controller="home" asp-action="privacy" id="privacy-tab"   >Privacy</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="flex-sm-fill text-sm-center nav-link  " asp-controller="home" asp-action="contact" id="contact-tab"  >Contact</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="flex-sm-fill text-sm-center nav-link " asp-controller="home" asp-action="abaut" id="abaut-tab"   >Abaut</a>
+                      </li>
+
+                    </ul>
+             </div>
+  
+                  
+                
+            </nav>  
+
+    </header>
+    <div class="container">
+        <partial name="_CookieConsentPartial" />
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2019 - aspmvc - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <environment include="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                crossorigin="anonymous"
+                integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o">
+        </script>
+    </environment>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
