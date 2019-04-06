@@ -1,0 +1,55 @@
+﻿@{
+    ViewData["Title"] = "How to Start?";
+}
+<html>
+
+<head>
+    <div class="text-center">
+        <h1>@ViewData["Title"]</h1>
+    </div>
+</head>
+
+<body>
+    <p><b>Steps to follow to use .net with docker</b></p>
+
+    <p class=MsoNormal> Install .Net Core SDK                                                    </p>
+    <p class=MsoNormal> <a href="https://dotnet.microsoft.com/download ">https://dotnet.microsoft.com/download                                    </a></p>
+    <p class=MsoNormal> Install Docker                                                           </p>
+    <p class=MsoNormal> <a href="https://www.docker.com/products/docker-desktop">https://www.docker.com/products/docker-desktop                           </a></p>
+    <p class=MsoNormal> Install text editor as Visual Studio Code                                </p>
+    <p class=MsoNormal><a href="https://code.visualstudio.com/ "> https://code.visualstudio.com/                                           </a></p>
+    <p class=MsoNormal> Way to use it:                                                         </p>
+    <p class=MsoNormal> 	1- Create folder for the new project                                      </p>
+    <p class=MsoNormal> 		In CMD:                                                                 </p>
+    <p class=MsoNormal><code> 			CD C:\                                                              </code></p>
+    <p class=MsoNormal><code> 			MD NewProyect                                                       </code></p>
+    <p class=MsoNormal> 	2- Create MVC project                                                     </p>
+    <p class=MsoNormal> 		In CMD:                                                                 </p>
+    <p class=MsoNormal><code> 			CD C:\NewProyect                                                    </code></p>
+    <p class=MsoNormal><code> 			dotnet new mvc                                                      </code></p>
+    <p class=MsoNormal> 	3- Open the project with the text editor to edit it                       </p>
+    <p class=MsoNormal> 	4- Publish project                                                        </p>
+    <p class=MsoNormal> 		In CMD:	                                                                </p>
+    <p class=MsoNormal><code> 			CD C:\NewProyect                                                    </code></p>
+    <p class=MsoNormal><code> 			dotnet publish -o ./publish                                         </code></p>
+    <p class=MsoNormal> 	5- Start service                                                          </p>
+    <p class=MsoNormal> 		In CMD:	                                                                </p>
+    <p class=MsoNormal><code> 			CD C:\NewProyect\publish                                            </code></p>
+    <p class=MsoNormal><code> 			dotnet NewProyect.dll                                               </code></p>
+    <p class=MsoNormal> 	6- Create Dockerfile in the project folder with:                           </p>
+    <p class=MsoNormal><code> 		FROM dotnet/core-nightly/sdk:2.1                                        </code></p>
+    <p class=MsoNormal><code> 		WORKDIR /app                                                            </code></p>
+    <p class=MsoNormal><code> 		COPY ./publish .                                                        </code></p>
+    <p class=MsoNormal><code> 		ENTRYPOINT ["dotnet","NewProyect.dll"]                                  </code></p>
+    <p class=MsoNormal> 	7- Create image .net e and boot image in a port                           </p>
+    <p class=MsoNormal> 		In CMD:	                                                                </p>
+    <p class=MsoNormal><code> 			CD C:\NewProyect                                                    </code></p>
+    <p class=MsoNormal><code> 			docker build -t myimagen .                                          </code></p>
+    <p class=MsoNormal><code> 			docker run -p 5000:80 myimagen                                      </code></p>
+    <p class=MsoNormal> 	8- You have access to the service through the URL: <a>https://localhost:5000/</a></p>
+
+
+
+</body>
+
+</html>

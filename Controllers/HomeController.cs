@@ -19,7 +19,7 @@ namespace aspmvc.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Start()
         {
             return View();
         }
@@ -38,31 +38,6 @@ namespace aspmvc.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        public class enviarEmail
-        {
-            MailMessage m =new MailMessage();
-            SmtpClient smtp =new SmtpClient();
 
-            public bool enviarunemail(string to,string mensaje){
-                try{
-                    string from="";
-                    string password="";
-                    m.From=new MailAddress(from);
-                    m.To.Add(new MailAddress(to));
-                    m.Body=mensaje;
-                    smtp.Host="smtp.gmail.com";
-                    smtp.Port=587;
-                    smtp.Credentials=new NetworkCredential(from,password);
-                    smtp.EnableSsl=true;
-                    smtp.Send(m);
-                    return true;
-                    
-                }
-                catch(Exception e){
-                    Console.WriteLine(e.StackTrace);
-                    return false;
-                }
-            }
-        }
     }
 }

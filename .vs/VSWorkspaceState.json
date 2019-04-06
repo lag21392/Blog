@@ -2,9 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\Controllers",
+    "\\mail",
+    "\\Models",
     "\\Views",
     "\\Views\\Home"
   ],
-  "SelectedNode": "\\Controllers\\HomeController.cs",
+  "SelectedNode": "\\Views\\Home\\Index.cshtml",
   "PreviewInSolutionExplorer": false
 }
